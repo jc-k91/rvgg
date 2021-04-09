@@ -6,7 +6,6 @@ At a base level, user can choose a card-based UI (like flowerbox) or a Pokemon i
 
 // BASIC FUNCTIONALITY //
 
-
 RVGM is a gallery of retro video games where users can pull up data about the displayed games.
 
 // // Click UI // //
