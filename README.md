@@ -13,7 +13,12 @@ In its most basic form, RVGM will allow a user to access information on a limite
     Move your character to different displays using keyboard inputs and press a button to pull up details about each game.
 
 // TECHNOLOGIES USED //
+    W3Schools - https://www.w3schools.com/howto/howto_css_flip_card.asp
 
+// APPROACH //
+    I decided pretty early on that I want to create a site that calls info from some database for a user to view. I was originally thinking I wanted to use the Rick and Morty API, but opted to go for an API that was not in the provided list. I ended up going for a video game database API because, well, I like video games. To make things more interesting and challenge myself, I decided to make the primary UI in the style of a Pokemon game (4-directional movement with interactable displays or exhibits, so-to-speak, that would bring up information for the corresponding video game), but allow the user to opt out for a more familiar click interface.
+
+    I found Twitch's IGDB API, but I couldn't get it working (I think it's broken?), so after a little searching and a bit of trial and error, I found the RAWG API, which functions exactly the way I need.
 
 // FORESEEN CHALLENGES
 
@@ -27,10 +32,8 @@ In its most basic form, RVGM will allow a user to access information on a limite
 
 // UNFORESEEN CHALLENGES
 
-// APPROACH //
-    I decided pretty early on that I want to create a site that calls info from some database for a user to view. I was originally thinking I wanted to use the Rick and Morty API, but opted to go for an API that was not in the provided list. I ended up going for a video game database API because, well, I like video games. To make things more interesting and challenge myself, I decided to make the primary UI in the style of a Pokemon game (4-directional movement with interactable displays or exhibits, so-to-speak, that would bring up information for the corresponding video game), but allow the user to opt out for a more familiar click interface.
-
-    I found Twitch's IGDB API, but I couldn't get it working (I think it's broken?), so after a little searching and a bit of trial and error, I found the RAWG API, which functions exactly the way I need.
+// // Click UI // //
+    - Flipping animation for cards was much more finicky than I had initially thought. I was able to make each side reverse on its own, but it wouldn't work when I added in the code for the animation. It seems to be really picky about the order in which you add styling and transform code.
 
 ///// PROGRESS SUMMARY LOG /////
     04-09-21: Set up project Trello board to keep tasks and ideas organized
