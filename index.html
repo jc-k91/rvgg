@@ -14,10 +14,77 @@
         <!-- HEADER -->
         <header>
             <h1>RVGG</h1>
+            <button id="menu-button"></button>
         </header>
 
         <!-- MAIN CONTENT -->
         <section class="main-content">
+
+            <!-- MENU -->
+            <div class="hide" id="menu-container">
+                <div id="menu">
+
+                    <!-- FILTERS -->
+                    <form id="filter-form">
+                        <div class="filter-list" id="platforms">
+                            <h6 class="filter-title">Platforms</h6>
+                            <div class='checkboxes'>
+                                <div class="filter-each">
+                                    <input type="checkbox" class='filter' id='3do' value='12'>
+                                    <label for='3do'>3DO</label>
+                                </div>
+                                <div class="filter-each">
+                                    <input type="checkbox" class='filter' id='atari' value='9'>
+                                    <label for="atari">ATARI</label>
+                                </div>
+                                <div class="filter-each">
+                                    <input type="checkbox" class='filter' id='neogeo' value='13'>
+                                    <label for="neogeo">NEO•GEO</label>
+                                </div>
+                                <div class="filter-each">
+                                    <input type="checkbox" class='filter' id='nintendo' value='7'>
+                                    <label for="nintendo">Nintendo</label>
+                                </div>
+                                <div class="filter-each">
+                                    <input type="checkbox" class='filter' id='playstation' value='2'>
+                                    <label for="playstation">PlayStation</label>
+                                </div>
+                                <div class="filter-each">
+                                    <input type="checkbox" class='filter' id='sega' value='11'>
+                                    <label for="sega">SEGA</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-list" id="decades">
+                            <h6 class="filter-title">Decades</h6>
+                            <div class='checkboxes'>
+                                <div class="filter-each">
+                                    <input type="checkbox" class='filter' id='70s' value='1970-01-01,1979-12-31'>
+                                    <label for="70s">The '70s</label>
+                                </div>
+                                <div class="filter-each">
+                                    <input type="checkbox" class='filter' id='80s' value='1980-01-01,1989-12-31'>
+                                    <label for="80s">The '80s</label>
+                                </div>
+                                <div class="filter-each">
+                                    <input type="checkbox" class='filter' id='90s' value='1990-01-01,1999-12-31'>
+                                    <label for="90s">The '90s</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="filter-buttons-container">
+                            <div class="filter-buttons" id="filter-buttons-left">
+                                <button id="close-filters">Close</button>
+                            </div>
+                            <div class="filter-buttons" id="filter-buttons-right">
+                                <button id="clear-filters">Clear</button>
+                                <input type="submit" id="apply-filters" value="Apply">
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
 
             <!-- CLICK UI -->
             <div class="click-UI">
