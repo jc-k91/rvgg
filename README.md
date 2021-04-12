@@ -33,9 +33,17 @@ In its most basic form, RVGM will allow a user to access information on a limite
 // UNFORESEEN CHALLENGES
 
 // // Click UI // //
-    - Flipping animation for cards was much more finicky than I had initially thought. I was able to make each side reverse on its own, but it wouldn't work when I added in the code for the animation. It seems to be really picky about the order in which you add styling and transform code.
+    - Flipping animation for cards was much more finicky than I had initially thought. I was able to make each side reverse on its own, but it wouldn't work when I added in the code for the animation. It seems to be really picky about the order in which you add styling and transform code. I thought it was weird that it would work if I copy the code from W3Schools but not when I type my own version, and then realized I had added a single extra comma in my implementation of the flip, and it was breaking everything.
 
 ///// PROGRESS SUMMARY LOG /////
+    04-12-21: Brain seems to be working properly today. Starting off the day by fine tuning search filters.
+
+    04-11-21: Having a really difficult time focusing on any given task. I suspect this might be a lingering side-effect from the COVID vaccine. Shelving the video game UI for now.
+
+    04-10-21: Turns out the animation was breaking because I was adding an extra comma in the CSS... marking the line in style/main.css.
+
+    04-10-21: Struggling to get the card flip animation working. Strangely enough, it works if I paste it directly from W3Schools, but it refuses to work if I write my own code.
+
     04-09-21: Set up project Trello board to keep tasks and ideas organized
 
     04-09-21: Created a GitHub repository and cloned it to my computer. Trying out having multiple css and javascript folders to keep sections of code organized.

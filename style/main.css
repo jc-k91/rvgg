@@ -70,15 +70,15 @@ h1 {
     perspective: 1000px;
 }
 
-.card-inner { /*Thank you, W3Schools for showing me that this won't work without an extra container div*/
+.card-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 1s;
+    transition: transform .5s;
     transform-style: preserve-3d;
 }
 
-.card:hover .card-inner {
+.card:hover .card-inner { /*I kept writing this line as .card:hover, .card-inner... how aggravating*/
     transform: rotateY(180deg)
 }
 
