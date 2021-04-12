@@ -1,4 +1,4 @@
-# retro_video_game_museum
+# retro_video_game_gallery
 Retro Video Game Gallery (RVGG)
 
 In its most basic form, RVGM will allow a user to access information on a limited scope of retro video games.
