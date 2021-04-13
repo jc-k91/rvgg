@@ -1,4 +1,8 @@
 ///// PROGRESS SUMMARY LOG /////
+    04-13-21: Feeling really good today. Got my coffee and I'm hitting the ground running. Should have MVPs done by this afternoon.
+
+    04-12-21: Made a ton of progress. Got the filters modal working as intended, and made functions to parse the filters into pieces of data that are usable for the API request..
+
     04-12-21: Brain seems to be working properly today. Starting off the day by fine tuning search filters.
 
     04-11-21: Having a really difficult time focusing on any given task. I suspect this might be a lingering side-effect from the COVID vaccine. Shelving the video game UI for now.
