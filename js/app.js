@@ -3,7 +3,7 @@ $(() => { // WINDOW ONLOAD START
     // API key for RAWG; must include with every request
     const keyRAWG = 'e5b52324368b42a2b8079aae967d4128'
     $.ajax({ // AJAX CALL START
-        url:`https://api.rawg.io/api/games?key=${keyRAWG}&page_size=24&page=4&dates=1983-01-01,1983-12-31,2016-01-01,2016-12-31`,//&parent_platforms=12`,
+        url:`https://api.rawg.io/api/games?key=${keyRAWG}&page_size=24&page=4&dates=1970-01-01,1999-12-31`//&parent_platforms=12`,
     }).then(
         (data)=>{
             console.log(data)
@@ -82,6 +82,9 @@ $(() => { // WINDOW ONLOAD START
     $('#apply-filters').on('click', (event) => {
         event.preventDefault()
         parseFilters()
+        platformFilter = parsedPlatformFilterArr.join(',')
+        dateFilter = parsedDateFilterArr.join(',')
+
         // console.log($('input[type="checkbox"]').toArray());
         // console.log($('input[type="checkbox"]').prop('checked'));
     })
