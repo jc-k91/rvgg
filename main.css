@@ -59,6 +59,17 @@ header button {
     /* border: 1px solid green; */
 }
 
+#loading-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f0f0f;
+    color: #eee;
+}
+
 /* MENU */
 #menu-container {
     position: fixed;
@@ -148,7 +159,7 @@ header button {
     border: 1px solid red;
 }
 
-.card-inner {
+.card-sleeve { /*Thank you, W3Schools for showing me that this won't work without an extra container div */
     position: relative;
     width: 100%;
     height: 100%;
@@ -156,7 +167,11 @@ header button {
     transform-style: preserve-3d;
 }
 
-.card:hover .card-inner { /*I kept writing this line as .card:hover, .card-inner... how aggravating*/
+/* .card:hover .card-sleeve { I kept writing this line as .card:hover, .card-sleeve... how aggravating
+    transform: rotateY(180deg)
+} */
+
+.flip { /* The above doesn't work as intended with the zoom modal. Created new class to trigger on focus. */
     transform: rotateY(180deg)
 }
 
