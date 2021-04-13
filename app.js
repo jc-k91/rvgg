@@ -20,9 +20,16 @@ $(() => { // WINDOW ONLOAD START
     let parsedPlatformFilterArr = []
     let parsedDateFilterArr = []
 
+    // Filters parsed through parseFilters() to be added to API request URL
+    let platformFilter = ''
+    let dateFilter = ''
+    let filterURLReady = ''
 
+///////////////////////////
 //////// FUNCTIONS ////////
-    // Toggle menu visibility
+///////////////////////////
+
+    // Toggles menu visibility
     const toggleMenu = (event) => {
         event.preventDefault()
         $('#menu-container').toggleClass('hide')
@@ -33,25 +40,39 @@ $(() => { // WINDOW ONLOAD START
         filterArrIndex.checked == true
     }
 
-    // Parses filter selections into values we can push into API request parameters
+    // Parses platform and date filter selections into values we can push into API request parameters
     const parseFilters = () => {
+        // Part 1 parses platform filters
         parsedPlatformFilterArr = []
         let selectedFilters = $('input[type="checkbox"]')
-        for (let i = 0; i < 6; i++) {//filterItem of selectedFilters) {
-            console.log($(selectedFilters.eq(i)).attr('checked'));
+        for (let i = 0; i < 6; i++) {
             if ($(selectedFilters.eq(i)).attr('checked') == 'checked') {
                 parsedPlatformFilterArr.push($(selectedFilters.eq(i)).val())
             }
         }
+        // Part 2 parses date filters
         parsedDateFilterArr = []
-        for (let i = 6; i < 8; i++) {//filterItem of selectedFilters) {
-            console.log($(selectedFilters.eq(i)).attr('checked'));
+        for (let i = 6; i < 8; i++) {
             if ($(selectedFilters.eq(i)).attr('checked') == 'checked') {
                 parsedDateFilterArr.push($(selectedFilters.eq(i)).val())
             }
         }
-        console.log(parsedPlatformFilterArr);
-        console.log(parsedDateFilterArr);
+    }
+
+    // Concatenates filters to interpolate into API request URL. If no boxes are checked, all filters are added automatically to limit scope of site.
+    const concatFilters = () => {
+        // Part 1
+        if (parsedPlatformFilterArr === []) {
+            platformFilter = '&parent_platforms=2,7,9,11,12,13'
+        } else {
+            platformFilter = `&parent_platforms=${parsedPlatformFilterArr.join(',')}`
+        }
+        if (parsedDateFilterArr === []) {
+            dateFilter = '&dates=1970-01-01,1999-12-31'
+        } else {
+            dateFilter = `&dates=${parsedDateFilterArr.join(',')}`
+        }
+        filterURLReady = platformFilter + dateFilter
     }
 
     // Renders API request results into cards
@@ -82,8 +103,9 @@ $(() => { // WINDOW ONLOAD START
     $('#apply-filters').on('click', (event) => {
         event.preventDefault()
         parseFilters()
-        platformFilter = parsedPlatformFilterArr.join(',')
-        dateFilter = parsedDateFilterArr.join(',')
+        concatFilters()
+        console.log(platformFilter)
+        console.log(dateFilter);
 
         // console.log($('input[type="checkbox"]').toArray());
         // console.log($('input[type="checkbox"]').prop('checked'));
