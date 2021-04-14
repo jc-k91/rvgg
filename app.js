@@ -151,6 +151,10 @@ $(() => { // WINDOW ONLOAD START
         ) // AJAX CALL END
     } // -------- requestData() END --------
 
+    const loadScreen = () => {
+
+    } // -------- loadScreen() END --------
+
 
 /////////////////////////////////////////
 /////////////// LISTENERS ///////////////
