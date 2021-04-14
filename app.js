@@ -99,7 +99,7 @@ $(() => { // WINDOW ONLOAD START
             const $cardFront = $('<div>').addClass('card-front')
             const $cardBack = $('<div>').addClass('card-back')
             const $gameDetails = $('<div>').addClass('game-details')
-            // const $gallery
+            const $galleryContainer = $('<div>').addClass('gallery-container hide')
             const $detailsButtonContainer = $('<div>').addClass('details-button-container')
             const $moreDetailsButton = $('<button>').text('More Details...').addClass('details-button')
 
@@ -109,12 +109,12 @@ $(() => { // WINDOW ONLOAD START
             $detailsButtonContainer.append($moreDetailsButton)
             $cardSleeve.append($cardFront).append($cardBack)
             $cardFront.append($cardCoverImg)
-            $cardBack.append($title).append($ratingHeading).append($rating).append($releaseDateHeading).append($releaseDate).append($detailsButtonContainer)
+            $cardBack.append($title).append($ratingHeading).append($rating).append($releaseDateHeading).append($releaseDate).append($galleryContainer).append($detailsButtonContainer)
 
             // Adds gallery photos to gallery photo container
-            for (let j = 0; j< 6; j++) {
-                const $galleryImage =
-                gameImageArr.push(arr[i].short_screenshots[j].image)
+            for (let j = 0; j < 6; j++) {
+                const $galleryImage = $('<img>').attr('src', arr[i].short_screenshots[j].image)
+                $galleryContainer.append($galleryImage)
             }
 
             // Adds click listener to each card for flip animation
@@ -124,11 +124,12 @@ $(() => { // WINDOW ONLOAD START
                 }
             })
 
-            // Adds click listener to each card's more details button
+            // Adds click listener to each card's more details button; enlarges details on click and makes gallery visible
             $card.on('click', (event) => {
                 if ($(event.target).hasClass('details-button')) {
                     $(event.currentTarget).toggleClass('selected-card')
                     $detailsButtonContainer.remove()
+                    $card.children().eq(0).children().eq(1).children().eq(5).toggleClass('hide')
                 }
             })
         }

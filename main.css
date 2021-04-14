@@ -148,6 +148,11 @@ header button {
     /* border: 1px solid blue; */
 }
 
+/* BUTTONS */
+.button {
+
+}
+
 /* CLICK UI CARDS */
 .card {
     /* position: relative; */
@@ -214,6 +219,20 @@ header button {
     margin: 0;
     box-sizing: border-box;
     transform: rotateY(180deg);
+}
+
+.gallery-container {
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 95%
+}
+
+.gallery-container img {
+    width: 47%;
+    margin: 1em 0;
+    background-color: transparent;
 }
 
 .details-title {
