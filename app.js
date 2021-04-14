@@ -69,20 +69,28 @@ $(() => { // WINDOW ONLOAD START
         requestURL = `https://api.rawg.io/api/games?key=${keyRAWG + filterURLReady}&page_size=24`
     } // -------- concatFilters() END --------
 
+
+
     // Renders API request results into cards and appends to pages
     const renderCards = (arr) => {
         for (let i = 0; i < arr.length; i++) {
+            // Pics
+            const gameImageArr = []
+
             // Render setup
             const gameImageURL = arr[i].background_image
             const gameTitle = arr[i].name
             const esrb = arr[i].esrb_rating?.name || 'Not available'
             const releaseDate = arr[i].released
 
+
             // content insertion into DOM elements
-            const $title = $('<h3>').text(gameTitle).addClass('title-text')
-            const $ratingHeading = $('<h5>').text('ESRB Rating').addClass('detail-heading')
-            const $rating = $('<p>').text(esrb).addClass('esrb-text')
-            const $releaseDate = $('<p>').text(releaseDate).addClass('release-date-text')
+            const $title = $('<h3>').text(gameTitle).addClass('details-title')
+            const $ratingHeading = $('<h5>').text('ESRB Rating').addClass('details-heading')
+            const $rating = $('<p>').text(esrb).addClass('details-p')
+            const $releaseDateHeading = $('<h5>').text('Release Date').addClass('details-heading')
+            const $releaseDate = $('<p>').text(releaseDate).addClass('details-p')
+
 
             // jQuery parts setup
             const $card = $('<div>').addClass('card')
@@ -91,17 +99,37 @@ $(() => { // WINDOW ONLOAD START
             const $cardFront = $('<div>').addClass('card-front')
             const $cardBack = $('<div>').addClass('card-back')
             const $gameDetails = $('<div>').addClass('game-details')
+            // const $gallery
+            const $detailsButtonContainer = $('<div>').addClass('details-button-container')
+            const $moreDetailsButton = $('<button>').text('More Details...').addClass('details-button')
 
             // Appendages (from outside in)
             $('.card-container').append($card)
             $card.append($cardSleeve)
+            $detailsButtonContainer.append($moreDetailsButton)
             $cardSleeve.append($cardFront).append($cardBack)
             $cardFront.append($cardCoverImg)
-            $cardBack.append($title).append($rating).append($releaseDate)
+            $cardBack.append($title).append($ratingHeading).append($rating).append($releaseDateHeading).append($releaseDate).append($detailsButtonContainer)
+
+            // Adds gallery photos to gallery photo container
+            for (let j = 0; j< 6; j++) {
+                const $galleryImage =
+                gameImageArr.push(arr[i].short_screenshots[j].image)
+            }
 
             // Adds click listener to each card for flip animation
             $cardSleeve.on('click', (event) => {
-                $(event.currentTarget).toggleClass('flip')
+                if (!$(event.target).is('button')) {
+                    $(event.currentTarget).toggleClass('flip')
+                }
+            })
+
+            // Adds click listener to each card's more details button
+            $card.on('click', (event) => {
+                if ($(event.target).hasClass('details-button')) {
+                    $(event.currentTarget).toggleClass('selected-card')
+                    $detailsButtonContainer.remove()
+                }
             })
         }
     } // -------- renderCards() END --------
@@ -148,7 +176,7 @@ $(() => { // WINDOW ONLOAD START
     // Applies selected filters and renders new results onto page on apply button click
     $('#apply-filters').on('click', (event) => {
         event.preventDefault()
-        $('card-container').empty()
+        $('.card-container').empty()
         parseFilters()
         concatFilters()
         requestData()

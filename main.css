@@ -77,7 +77,7 @@ header button {
     height: 100%;
     background: rgba(0, 0, 0, .5);
     margin: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 #menu {
@@ -145,19 +145,28 @@ header button {
     align-items: flex-start;
     width: 100%;
     height: 100%;
-    padding-bottom: 2em;
     /* border: 1px solid blue; */
 }
 
 /* CLICK UI CARDS */
 .card {
     /* position: relative; */
-    width: 40%;
+    width: 39%;
     height: 25%;
     background: transparent;
-    margin: 1em;
+    margin: 0;
+    margin-top: 1.5em;
     perspective: 1000px;
     /* border: 1px solid red; */
+}
+
+.selected-card {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    transition-duration: .2s;
+    z-index: 1;
+    margin: 0;
 }
 
 .card-sleeve { /*Thank you, W3Schools for showing me that this won't work without an extra container div */
@@ -186,7 +195,7 @@ header button {
 .card-front {
     display: flex;
     align-items: center;
-    background: yellow;
+    background: white;
 }
 
 .card-front img {
@@ -195,14 +204,43 @@ header button {
 }
 
 .card-back {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     background: grey;
     overflow-y: scroll;
-    padding: .2em 1em;
+    padding: .5em .5em;
     margin: 0;
     box-sizing: border-box;
     transform: rotateY(180deg);
+}
+
+.details-title {
+    margin: 0;
+}
+
+.details-heading {
+    margin: 0;
+    margin-top: .5em;
+}
+
+.details-p {
+    margin: 0;
+}
+
+.details-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 1.25em;
+    margin-top: .5em;
+    /* border: 1px solid red; */
+}
+
+.details-button {
+    height: 100%;
 }
 
 /* TOGGLES */
