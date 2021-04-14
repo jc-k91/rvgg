@@ -1,10 +1,10 @@
 # retro_video_game_gallery
 Retro Video Game Gallery (RVGG)
 
-In its most basic form, RVGM will allow a user to access information on a limited scope of retro video games.
+In its most basic form, RVGG will allow a user to access information on a limited scope of retro video games.
 
 // BASIC FUNCTIONALITY //
-    RVGM is a gallery of retro video games where users can pull up data about the displayed games.
+    RVGG is a gallery of retro video games where users can pull up data about the displayed games.
 
 // // Click UI // //
     Clickable card layout with title cards that include a picture of the game cover or the like, along with title. User will click on a card to flip and zoom into details.
@@ -13,6 +13,7 @@ In its most basic form, RVGM will allow a user to access information on a limite
     Move your character to different displays using keyboard inputs and press a button to pull up details about each game.
 
 // TECHNOLOGIES USED //
+
     W3Schools - https://www.w3schools.com/howto/howto_css_flip_card.asp
 
 // APPROACH //
@@ -20,7 +21,7 @@ In its most basic form, RVGM will allow a user to access information on a limite
 
     I found Twitch's IGDB API, but I couldn't get it working (I think it's broken? It's throwing tons of 404 errors), so after a little searching and a bit of trial and error, I found the RAWG API, which functions almost exactly the way I need. I initially planned to include each game's description/summary in their respective displays, but that's a paid feature for the RAWG API, so I changed my project's title from Retro Video Game Museum to Retro Video Game Gallery so I can do without the descriptions.
 
-    The next phase was figuring out how many and which games to include. There was no way to distill decades worth of video games into a short concise list, so I opted to add filters via a checklist modal (something we haven't explored in class) and display only 24 tiles at a time.
+    The next phase was figuring out how many and which games to include. There was no way to distill decades worth of video games into a short concise list, so I opted to add filters via a checklist modal (something we haven't explored in class) and display only 24 tiles at a time. I knew from the beginning that I would want the cards to flip over and then zoom for more details, and that was a pain in the butt to implement, but I was able to get it working.
 
 // FORESEEN CHALLENGES
 
