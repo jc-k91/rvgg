@@ -1,4 +1,8 @@
 ///// PROGRESS SUMMARY LOG /////
+    04-13-21: Set up Netlify continuous deployment: ga-rvgg.netlify.app
+
+    04-13-21: Mostly finished adding API request data to cards, and adjusted styling to work for the images' aspect ratio a little better
+
     04-13-21: Feeling really good today. Got my coffee and I'm hitting the ground running. Should have MVPs done by this afternoon.
 
     04-12-21: Made a ton of progress. Got the filters modal working as intended, and made functions to parse the filters into pieces of data that are usable for the API request..
