@@ -101,7 +101,7 @@ $(() => { // WINDOW ONLOAD START
             const $gameDetails = $('<div>').addClass('game-details')
             const $galleryContainer = $('<div>').addClass('gallery-container hide')
             const $detailsButtonContainer = $('<div>').addClass('details-button-container')
-            const $moreDetailsButton = $('<button>').text('More Details...').addClass('details-button')
+            const $moreDetailsButton = $('<button>').text('More Details...').addClass('details-button button')
 
             // Appendages (from outside in)
             $('.card-container').append($card)
@@ -112,7 +112,7 @@ $(() => { // WINDOW ONLOAD START
             $cardBack.append($title).append($ratingHeading).append($rating).append($releaseDateHeading).append($releaseDate).append($galleryContainer).append($detailsButtonContainer)
 
             // Adds gallery photos to gallery photo container
-            for (let j = 0; j < 6; j++) {
+            for (let j = 0; j < (arr[i].short_screenshots[j] < 6 ? arr[i].short_screenshots[j].length : 6); j++) {
                 const $galleryImage = $('<img>').attr('src', arr[i].short_screenshots[j].image)
                 $galleryContainer.append($galleryImage)
             }
@@ -128,8 +128,8 @@ $(() => { // WINDOW ONLOAD START
             $card.on('click', (event) => {
                 if ($(event.target).hasClass('details-button')) {
                     $(event.currentTarget).toggleClass('selected-card')
-                    $detailsButtonContainer.remove()
                     $card.children().eq(0).children().eq(1).children().eq(5).toggleClass('hide')
+                    // for (let k = 0; k < $('.'); k++)
                 }
             })
         }
