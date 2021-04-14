@@ -1,4 +1,8 @@
 ///// PROGRESS SUMMARY LOG /////
+    04-14-21: Made a fun onboarding page that slides up and off-screen on first filter menu button click.
+
+    04-14-21: Spent nearly the whole day on fine-tuning base styling and functionality. It's finally done! Now to get started with media queries...
+
     04-13-21: Mostly finished setting up enlarged details modal.
 
     04-13-21: Set up Netlify continuous deployment: ga-rvgg.netlify.app.
