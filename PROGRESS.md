@@ -1,7 +1,9 @@
 ///// PROGRESS SUMMARY LOG /////
-    04-13-21: Set up Netlify continuous deployment: ga-rvgg.netlify.app
+    04-13-21: Mostly finished setting up enlarged details modal.
 
-    04-13-21: Mostly finished adding API request data to cards, and adjusted styling to work for the images' aspect ratio a little better
+    04-13-21: Set up Netlify continuous deployment: ga-rvgg.netlify.app.
+
+    04-13-21: Mostly finished adding API request data to cards, and adjusted styling to work for the images' aspect ratio a little better.
 
     04-13-21: Feeling really good today. Got my coffee and I'm hitting the ground running. Should have MVPs done by this afternoon.
 
@@ -15,7 +17,7 @@
 
     04-10-21: Struggling to get the card flip animation working. Strangely enough, it works if I paste it directly from W3Schools, but it refuses to work if I write my own code.
 
-    04-09-21: Set up project Trello board to keep tasks and ideas organized
+    04-09-21: Set up project Trello board to keep tasks and ideas organized.
 
     04-09-21: Created a GitHub repository and cloned it to my computer. Trying out having multiple css and javascript folders to keep sections of code organized.
 
