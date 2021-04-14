@@ -17,6 +17,9 @@ $(() => { // WINDOW ONLOAD START
     const keyRAWG = 'e5b52324368b42a2b8079aae967d4128'
     let requestURL = `https://api.rawg.io/api/games?key=${keyRAWG + filterURLReady}&page_size=24`
 
+    // Click counter to determine first user's first click on filter menu icon
+    let clickCounter = 0
+
 
 /////////////////////////////////////////
 /////////////// FUNCTIONS ///////////////
@@ -26,6 +29,9 @@ $(() => { // WINDOW ONLOAD START
     const toggleMenu = (event) => {
         event.preventDefault()
         $('#menu-container').toggleClass('hide')
+        if (clickCounter === 0) {
+            $('#onboarding').addClass('slide-out')
+        }
     } // -------- toggleMenu() END --------
 
     // Checks if checkbox is checked (that's a lot of 'check' in one sentence); has a funny name
@@ -69,8 +75,6 @@ $(() => { // WINDOW ONLOAD START
         requestURL = `https://api.rawg.io/api/games?key=${keyRAWG + filterURLReady}&page_size=24`
     } // -------- concatFilters() END --------
 
-
-
     // Renders API request results into cards and appends to pages
     const renderCards = (arr) => {
         for (let i = 0; i < arr.length; i++) {
@@ -101,14 +105,14 @@ $(() => { // WINDOW ONLOAD START
             const $gameDetails = $('<div>').addClass('game-details')
             const $galleryContainer = $('<div>').addClass('gallery-container hide')
             const $detailsButtonContainer = $('<div>').addClass('details-button-container')
-            const $moreDetailsButton = $('<button>').text('More Details...').addClass('details-button button')
+            const $moreDetailsButton = $('<button>').text('Gallery').addClass('details-button button')
 
             // Appendages (from outside in)
             $('.card-container').append($card)
             $card.append($cardSleeve)
-            $detailsButtonContainer.append($moreDetailsButton)
             $cardSleeve.append($cardFront).append($cardBack)
             $cardFront.append($cardCoverImg)
+            $detailsButtonContainer.append($moreDetailsButton)
             $cardBack.append($title).append($ratingHeading).append($rating).append($releaseDateHeading).append($releaseDate).append($galleryContainer).append($detailsButtonContainer)
 
             // Adds gallery photos to gallery photo container
@@ -124,12 +128,19 @@ $(() => { // WINDOW ONLOAD START
                 }
             })
 
-            // Adds click listener to each card's more details button; enlarges details on click and makes gallery visible
+            // Adds click listener to each card's more details button; enlarges details on click and makes gallery visible and changes button text to close, which closes the details on click.
             $card.on('click', (event) => {
                 if ($(event.target).hasClass('details-button')) {
                     $(event.currentTarget).toggleClass('selected-card')
                     $card.children().eq(0).children().eq(1).children().eq(5).toggleClass('hide')
                     // for (let k = 0; k < $('.'); k++)
+                    toggleScroll($('.card-container'))
+                    if ($('.details-close-button').hasClass('details-close-button')) {
+                        $('.card-container').toggleClass('disable-scroll')
+                        $('.details-button').text('Gallery').removeClass('details-close-button').addClass('details-button')
+                    } else {
+                        $('.details-button').text('Close').addClass('details-close-button')
+                    }
                 }
             })
         }
@@ -151,9 +162,31 @@ $(() => { // WINDOW ONLOAD START
         ) // AJAX CALL END
     } // -------- requestData() END --------
 
-    const loadScreen = () => {
+    const loadingScreen = () => {
+        let loadingText = 'Loading'
+        const $loadingContainer = $('<div>').attr('id', 'loading-container')
+        const $loadingTextContainer = $('<p>').text(loadingText).attr('id', 'loading-text')
 
-    } // -------- loadScreen() END --------
+        $loadingContainer.append($loadingTextContainer)
+        $('body').append($loadingContainer)
+
+        let intervalIteration = 0
+        const loadingTextUpdater = () => {
+            loadingText += '.'
+            intervalIteration++
+            $loadingTextContainer.text(loadingText)
+            if (intervalIteration == 4) {
+                clearInterval(interval)
+                $loadingContainer.remove()
+            }
+        }
+        let interval = setInterval(loadingTextUpdater, 550)
+    } // -------- loadingScreen() END --------
+
+    const toggleScroll = (jQueryObject) => {
+        jQueryObject.addClass('disable-scroll')
+    } // -------- toggleScroll() END --------
+
 
 
 /////////////////////////////////////////
@@ -162,6 +195,11 @@ $(() => { // WINDOW ONLOAD START
 
     // Toggles filter menu modal visibility
     $('#menu-button').on('click', toggleMenu)
+
+    // Toggles menu button styling on hover
+    $('header').on('hover', (event) => {
+        $(event.currentTarget).attr('src', 'imgs/icon_filter-red.png')
+    })
 
     // Toggles checked attribute on checkbox click
     $('input[type="checkbox"]').on('click', (event) => {
@@ -186,16 +224,8 @@ $(() => { // WINDOW ONLOAD START
         concatFilters()
         requestData()
         toggleMenu(event)
+        loadingScreen()
     })
-
-
-/////////////////////////////////////////
-/////// TESTING, ATTENTION PLEASE ///////
-/////////////////////////////////////////
-    // $('.card-sleeve').on('click', (event) => {
-    //     $(event.currentTarget).toggleClass('flip')
-    // })
-
 
 
 }) // WINDOW ONLOAD END
