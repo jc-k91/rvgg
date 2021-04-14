@@ -75,17 +75,19 @@ $(() => { // WINDOW ONLOAD START
             // Render setup
             const gameImageURL = arr[i].background_image
             const gameTitle = arr[i].name
-            const esrb = arr[i].esrb_rating?.name || 'ESRB rating unavailable'
+            const esrb = arr[i].esrb_rating?.name || 'Not available'
             const releaseDate = arr[i].released
 
             // content insertion into DOM elements
-            const $title = $('<h3>').text(gameTitle)
-            const $rating = $('<p>').text(esrb)
-            const $releaseDate = $('<p>').text(releaseDate)
+            const $title = $('<h3>').text(gameTitle).addClass('title-text')
+            const $ratingHeading = $('<h5>').text('ESRB Rating').addClass('detail-heading')
+            const $rating = $('<p>').text(esrb).addClass('esrb-text')
+            const $releaseDate = $('<p>').text(releaseDate).addClass('release-date-text')
 
             // jQuery parts setup
             const $card = $('<div>').addClass('card')
             const $cardSleeve = $('<div>').addClass('card-sleeve')
+            const $cardCoverImg = $('<img>').attr('src', gameImageURL)
             const $cardFront = $('<div>').addClass('card-front')
             const $cardBack = $('<div>').addClass('card-back')
             const $gameDetails = $('<div>').addClass('game-details')
@@ -94,6 +96,7 @@ $(() => { // WINDOW ONLOAD START
             $('.card-container').append($card)
             $card.append($cardSleeve)
             $cardSleeve.append($cardFront).append($cardBack)
+            $cardFront.append($cardCoverImg)
             $cardBack.append($title).append($rating).append($releaseDate)
 
             // Adds click listener to each card for flip animation
@@ -110,7 +113,6 @@ $(() => { // WINDOW ONLOAD START
         }).then(
             (data)=>{
                 console.log(data)
-                // RENDER TEST
                 let dataArr = data.results
                 renderCards(dataArr)
             },
