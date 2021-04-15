@@ -14,7 +14,9 @@ In its most basic form, RVGG will allow a user to access information on a limite
 
 // TECHNOLOGIES USED //
 
-    W3Schools - https://www.w3schools.com/howto/howto_css_flip_card.asp
+    W3Schools - https://www.w3schools.com/howto/howto_css_flip_card.asp - used CSS to make a simple 3D flipping animation.
+
+    Used a ton of JavaScript and jQuery to create listeners, parse data from API requests, and add information and pictures from the parsed data to the DOM to show the content on the base HTML page.
 
 // APPROACH //
     I decided pretty early on that I want to create a site that calls info from some database for a user to view. I was originally thinking I wanted to use the Rick and Morty API, but opted to go for an API that was not in the provided list. I ended up going for a video game database API because, well, I like video games. I wanted to make things more interesting and challenge myself and make the primary UI in the style of a Pokemon game (4-directional movement with interactable displays or exhibits, so-to-speak, that would bring up information for the corresponding video game), while allowing the user to opt out for a more familiar click interface, but I was out of commission for the weekend, so I decided shelving the videogame UI for the time being would be the right move.
@@ -25,7 +27,7 @@ In its most basic form, RVGG will allow a user to access information on a limite
 
     I also had some UI ideas I wanted to implement, but decided on only adding a custom header. With the help of my UX/UI designer girlfriend, the custom headers were finished and looking great!
 
-    Once I had the base functionality and styling done, I made the page responsive to larger window sizes, and with that, the project is complete!
+    Once I had the base functionality and styling done, I made the page responsive to larger window sizes (it's definitely not perfect, but good enough for me to call it quits for the day), and with that, the project is complete!
 
 // FORESEEN CHALLENGES
 
