@@ -29,6 +29,17 @@ In its most basic form, RVGG will allow a user to access information on a limite
 
     Once I had the base functionality and styling done, I made the page responsive to larger window sizes (it's definitely not perfect, but good enough for me to call it quits for the day), and with that, the project is complete!
 
+// UNSOLVED PROBLEMS
+
+// // ALL // //
+    - I think I was completely in over my head with the video game UI. I MIGHT have been able to do it if I was actually able to work Friday-Sunday.
+
+    - I wanted the gallery to have clickable images that would pop out into a full screen image carousel, but didn't have enough time to complete it.
+
+    - I want to make the JS a bit dryer.
+
+    - I think I can make the responsiveness in the layout much more efficient next time around. This time, I had forgotten that I could change the base REM value of the page to automatically resize a TON of elements without having to write out each one. I realized way too late to go back and change the implementation to the REM method.
+
 // FORESEEN CHALLENGES
 
 // // Click UI // //
