@@ -8,7 +8,6 @@ body {
     height: 100%;
     font-family: 'Press Start 2P', sans-serif;
     font-size: 1em;
-    color: #0f0f0f;
     background: #fdeece;
     padding: 0;
     margin: 0;
@@ -63,18 +62,21 @@ header {
     height: 75%;
     padding: 3em;
     box-sizing: border-box;
-    /* border: 1px solid pink; */
+    /* border: 1px solid black; */
 }
 
 #onboarding img {
     width: 50%;
     max-width: 150px;
     padding-bottom: 1em;
+    /* border: 1px solid black; */
 }
 
 #onboarding > div {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    /* border: 3px solid black; */
 }
 
 #onboarding p {
@@ -83,18 +85,19 @@ header {
     font-size: .5em;
     line-height: 1.5em;
     box-sizing: border-box;
+    /* border: 1px solid black; */
 }
 
 #onboarding #scream {
     font-size: 2em;
 }
 
-#oboarding a {
-    text-decoration: none;
+#onboarding a {
+    color: black;
 }
 
-#oboarding a:hover {
-    text-decoration: underline;
+#onboarding a:hover {
+    text-decoration: none;
 }
 
 #loading-container {
@@ -117,6 +120,7 @@ header {
     height: 105%;
     background: rgba(0, 0, 0, .5);
     margin: 0;
+    margin-top: -1em;
     z-index: 2;
 }
 
@@ -125,7 +129,6 @@ header {
     flex-direction: column;
     background: #fdeece;
     margin: 0;
-    margin-top: -1em;
     padding: 0;
     padding-top: 1em;
     /* border: 1px solid white; */
@@ -171,6 +174,7 @@ header {
 
 .filter-each {
     width: 48%;
+    max-width: 350px;
     padding: .2em 0;
 }
 
@@ -183,28 +187,13 @@ header {
     margin-left: -.5em;
 }
 
+/* BUTTONS */
 #filter-buttons-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-/* CLICK UI */
-.click-UI {
-    width: 100%;
-}
-
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid blue; */
-}
-
-/* BUTTONS */
 #menu-button { /*Only filter menu button. Inside <header>*/
     background: #d03419;
     padding: 2px;
@@ -266,6 +255,21 @@ header {
         color: #fdeece;
     }
 
+/* CLICK UI */
+.click-UI {
+    width: 100%;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid blue; */
+}
+
 /* CLICK UI CARDS */
 .card {
     /* position: relative; */
@@ -273,7 +277,7 @@ header {
     height: 40%;
     background: transparent;
     margin: 0;
-    margin-top: 1.5em;
+    margin-top: .5em;
     perspective: 1000px;
     /* border: 1px solid red; */
 }
@@ -289,6 +293,7 @@ header {
     /* padding-top: 10%; */
     margin: 0;
     margin-top: -10%;
+    border: 2px solid green;
 }
 
 .selected-card .details-title {
@@ -331,13 +336,12 @@ header {
 .card-front img {
     width: 100%;
     max-height: 100%;
+    border: 1px solid black;
 }
 
 .card-back {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
     background: #d57f18;
     color: #fdeece;
     overflow-y: scroll;
@@ -388,4 +392,170 @@ header {
 .slide-out {
     transform: translateY(-150%);
     transition-duration: .5s;
+}
+
+
+/* MEDIA QUERIES */
+@media (min-width: 700px) {
+    body {
+        background: pink;
+    }
+
+    header {
+        background: url('imgs/header_desktop.png');
+        background-position: left;
+    }
+
+    #menu {
+        position: absolute;
+        right: 0;
+        width: 60%;
+    }
+
+    #onboarding img {
+        max-width: 200px;
+    }
+
+    #onboarding p {
+        font-size: .65em;
+    }
+
+    #onboarding #scream {
+        font-size: 1.5em;
+    }
+
+    #loading-container {
+        font-size: 1em;
+    }
+
+    .filter-title {
+        font-size: .8em;
+        line-height: 1.5em;
+    }
+
+    .checkboxes {
+        font-size: .78em;
+    }
+
+    .button {
+        font-size: .78em;
+    }
+
+    .card {
+        width: 45%;
+        height: 30%;
+        max-width: 450px;
+        margin-top: 1em;
+    }
+
+    .selected-card {
+        width: 100%;
+        height: 97%;
+        max-width: 100%;
+    }
+
+    .gallery-container img {
+        width: 30%;
+    }
+
+    .details-title {
+        margin-left: 1em;
+    }
+
+    .details-heading {
+        margin-left: 1.6em;
+    }
+
+    .details-p {
+        margin-left: 2.5em;
+    }
+}
+
+
+@media (min-width: 1280px) {
+    body {
+        background: olive;
+    }
+
+    header {
+        background: url('imgs/header_desktop.png');
+        background-position: left;
+    }
+
+    #menu {
+        position: absolute;
+        right: 0;
+        width: 50%;
+    }
+
+    #onboarding {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 85%;
+    }
+
+    #onboarding img {
+        max-width: 300px;
+        padding-right: 4em;
+    }
+
+    #onboarding > div {
+        max-width: 30%;
+    }
+
+    #onboarding p {
+        font-size: .8em;
+        line-height: 1.5em;
+    }
+
+    #onboarding #scream {
+        font-size: 2em;
+        line-height: 1.5em;
+    }
+
+    #loading-container {
+        font-size: 1.25em;
+    }
+
+    .filter-title {
+        font-size: 1em;
+        line-height: 1.5em;
+    }
+
+    .checkboxes {
+        font-size: .85em;
+    }
+
+    .button {
+        font-size: .85em;
+    }
+
+    .card {
+        width: 30%;
+        height: 30%;
+        max-width: 600px;
+        margin-top: 1em;
+    }
+
+    .selected-card {
+        width: 100%;
+        height: 97%;
+        max-width: 100%;
+    }
+
+    .details-title {
+        font-size: 1.25em;
+        margin-left: 2em;
+    }
+
+    .details-heading {
+        font-size: 1.1em;
+        margin-left: 3.25em;
+    }
+
+    .details-p {
+        font-size: 1.1em;
+        margin-left: 4em;
+    }
 }

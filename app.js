@@ -134,7 +134,7 @@ $(() => { // WINDOW ONLOAD START
                     $(event.currentTarget).toggleClass('selected-card')
                     $card.children().eq(0).children().eq(1).children().eq(5).toggleClass('hide')
                     // for (let k = 0; k < $('.'); k++)
-                    toggleScroll($('.card-container'))
+                    // toggleScroll($('.card-container'))
                     if ($('.details-close-button').hasClass('details-close-button')) {
                         $('.card-container').toggleClass('disable-scroll')
                         $('.details-button').text('Gallery').removeClass('details-close-button').addClass('details-button')
