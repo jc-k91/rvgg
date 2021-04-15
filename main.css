@@ -293,7 +293,7 @@ header {
     /* padding-top: 10%; */
     margin: 0;
     margin-top: -10%;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 }
 
 .selected-card .details-title {
@@ -336,7 +336,7 @@ header {
 .card-front img {
     width: 100%;
     max-height: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .card-back {
