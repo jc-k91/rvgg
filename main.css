@@ -5,6 +5,7 @@ html {
 body {
     display: flex;
     flex-direction: column;
+    min-width: 375px;
     height: 100%;
     font-family: 'Press Start 2P', sans-serif;
     font-size: 1em;
@@ -62,18 +63,21 @@ header {
     height: 75%;
     padding: 3em;
     box-sizing: border-box;
-    /* border: 1px solid pink; */
+    /* border: 1px solid black; */
 }
 
 #onboarding img {
     width: 50%;
     max-width: 150px;
     padding-bottom: 1em;
+    /* border: 1px solid black; */
 }
 
 #onboarding > div {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    /* border: 3px solid black; */
 }
 
 #onboarding p {
@@ -82,18 +86,19 @@ header {
     font-size: .5em;
     line-height: 1.5em;
     box-sizing: border-box;
+    /* border: 1px solid black; */
 }
 
 #onboarding #scream {
     font-size: 2em;
 }
 
-#oboarding a {
-    text-decoration: none;
+#onboarding a {
+    color: black;
 }
 
-#oboarding a:hover {
-    text-decoration: underline;
+#onboarding a:hover {
+    text-decoration: none;
 }
 
 #loading-container {
@@ -113,9 +118,10 @@ header {
 #menu-container {
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 105%;
     background: rgba(0, 0, 0, .5);
     margin: 0;
+    margin-top: -1em;
     z-index: 2;
 }
 
@@ -125,6 +131,7 @@ header {
     background: #fdeece;
     margin: 0;
     padding: 0;
+    padding-top: 1em;
     /* border: 1px solid white; */
     border-radius: 0 0 4px 4px;
     color: #0f0f0f;
@@ -168,6 +175,7 @@ header {
 
 .filter-each {
     width: 48%;
+    max-width: 350px;
     padding: .2em 0;
 }
 
@@ -385,4 +393,116 @@ header {
 .slide-out {
     transform: translateY(-150%);
     transition-duration: .5s;
+}
+
+
+/* MEDIA QUERIES */
+@media (min-width: 700px) {
+    body {
+        background: pink;
+    }
+
+    header {
+        background: url('imgs/header_desktop.png');
+        background-position: left;
+    }
+
+    #menu {
+        position: absolute;
+        right: 0;
+        width: 60%;
+    }
+
+    #onboarding img {
+        max-width: 200px;
+    }
+
+    #onboarding p {
+        font-size: .75em;
+    }
+
+    #onboarding #scream {
+        font-size: 2em;
+    }
+
+    #loading-container {
+        font-size: 1em;
+    }
+
+    .filter-title {
+        font-size: 1em;
+        line-height: 1.5em;
+    }
+
+    .checkboxes {
+        font-size: .85em;
+    }
+
+    .button {
+        font-size: .85em;
+    }
+
+    .details-button-container button {
+
+    }
+}
+
+@media (min-width: 1280px) {
+    body {
+        background: olive;
+    }
+
+    header {
+        background: url('imgs/header_desktop.png');
+        background-position: left;
+    }
+
+    #menu {
+        position: absolute;
+        right: 0;
+        width: 50%;
+    }
+
+    #onboarding {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 85%;
+    }
+
+    #onboarding img {
+        max-width: 300px;
+        padding-right: 4em;
+    }
+
+    #onboarding > div {
+        max-width: 30%;
+    }
+
+    #onboarding p {
+        font-size: .85em;
+        line-height: 1.5em;
+    }
+
+    #onboarding #scream {
+        font-size: 3em;
+        line-height: 1.5em;
+    }
+
+    #loading-container {
+        font-size: 1.25em;
+    }
+
+    .filter-title {
+        font-size: 1.15em;
+        line-height: 1.5em;
+    }
+
+    .checkboxes {
+        font-size: 1em;
+    }
+
+    .button {
+        font-size: 1em;
+    }
 }
