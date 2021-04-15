@@ -38,7 +38,13 @@ In its most basic form, RVGG will allow a user to access information on a limite
 
     - I want to make the JS a bit dryer.
 
-    - I think I can make the responsiveness in the layout much more efficient next time around. This time, I had forgotten that I could change the base REM value of the page to automatically resize a TON of elements without having to write out each one. I realized way too late to go back and change the implementation to the REM method.
+    - I think I can make the responsiveness in the layout much more efficient next time around. This time, I had forgotten that I could change the base REM value of the page to automatically resize a TON of elements without having to write out each one. I realized way too late to go back and change the implementation to the REM method. (Checked on a few other browsers on different devices, and it's definitely broken in most of them)
+
+    - Add more pages to go through all results, not just the first 24.
+
+    - The filters break when there are no results. It sometimes applies a filter that includes EVERYTHING, even beyond the scope of my page, or doesn't return anything.
+
+    - Image cards look ugly because
 
 // FORESEEN CHALLENGES
 
@@ -51,6 +57,9 @@ In its most basic form, RVGG will allow a user to access information on a limite
     - Scrolling the map and not having the entire screen get pushed around (i.e. when character is "moving" down, the map is actually scrolling down, which could push the entire site down if not implemented properly)
 
 // UNFORESEEN CHALLENGES
+
+// // GENERAL // //
+    - API docs were TERRIBLE, not for the lack of information, but because it would keep refreshing the page automatically every few seconds.
 
 // // Click UI // //
     - Flipping animation for cards was much more finicky than I had initially thought. I was able to make each side reverse on its own, but it wouldn't work when I added in the code for the animation. It seems to be really picky about the order in which you add styling and transform code. I thought it was weird that it would work if I copy the code from W3Schools but not when I type my own version, and then realized I had added a single extra comma in my implementation of the flip, and it was breaking everything.

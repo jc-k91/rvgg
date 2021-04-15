@@ -51,7 +51,7 @@ $(() => { // WINDOW ONLOAD START
         }
         // Part 2 parses date filters
         parsedDateFilterArr = []
-        for (let i = 6; i < 8; i++) {
+        for (let i = 6; i < 9; i++) {
             if ($(selectedFilters.eq(i)).attr('checked') == 'checked') {
                 parsedDateFilterArr.push($(selectedFilters.eq(i)).val())
             }
