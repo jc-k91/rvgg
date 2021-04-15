@@ -1,4 +1,6 @@
 ///// PROGRESS SUMMARY LOG /////
+    04-14-21: Finished making the layout responsive. Calling it a night.
+
     04-14-21: Made a few more tweaks to the UI and finished about 75% of responsive design.
 
     04-14-21: Made a fun onboarding page that slides up and off-screen on first filter menu button click.

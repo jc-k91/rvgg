@@ -42,5 +42,7 @@ In its most basic form, RVGG will allow a user to access information on a limite
 // // Click UI // //
     - Flipping animation for cards was much more finicky than I had initially thought. I was able to make each side reverse on its own, but it wouldn't work when I added in the code for the animation. It seems to be really picky about the order in which you add styling and transform code. I thought it was weird that it would work if I copy the code from W3Schools but not when I type my own version, and then realized I had added a single extra comma in my implementation of the flip, and it was breaking everything.
 
+    - CSS property application priority behaves very strangely. Took a little maneuvering and help from classmates to figure out how to fix some parts.
+
 // // Checkboxes // //
     - Getting checkboxes to work for applying result filters was surprisingly complicated. I imagine there is a better way to implement them than in the way I did, but I didn't have time to dig through too many docs due to already being a bit behind schedule. The way I conceptualized it works, so I will go back to the docs after I'm finished with the project.
