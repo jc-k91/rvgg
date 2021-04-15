@@ -23,7 +23,7 @@ In its most basic form, RVGG will allow a user to access information on a limite
 
     The next phase was figuring out how many and which games to include. There was no way to distill decades worth of video games into a short concise list, so I opted to add filters via a checklist modal (something we haven't explored in class) and display only 24 tiles at a time. I knew from the beginning that I would want the cards to flip over and then zoom for more details, and that was a pain in the butt to implement, but I was able to get it working.
 
-    I also had some UI ideas I wanted to implement, but just decided on adding a custom header. With the help of my UX/UI designer girlfriend, the custom headers were finished and looking great!
+    I also had some UI ideas I wanted to implement, but decided on only adding a custom header. With the help of my UX/UI designer girlfriend, the custom headers were finished and looking great!
 
     Once I had the base functionality and styling done, I made the page responsive to larger window sizes, and with that, the project is complete!
 
