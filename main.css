@@ -397,9 +397,9 @@ header {
 
 /* MEDIA QUERIES */
 @media (min-width: 700px) {
-    body {
+    /* body {
         background: pink;
-    }
+    } */
 
     header {
         background: url('imgs/header_desktop.png');
@@ -473,9 +473,9 @@ header {
 
 
 @media (min-width: 1280px) {
-    body {
+    /* body {
         background: olive;
-    }
+    } */
 
     header {
         background: url('imgs/header_desktop.png');
